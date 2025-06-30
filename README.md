@@ -4,4 +4,6 @@ https://magicdawn.github.io/purple-colors/
 
 ## Credits
 
-Generated with ChatGPT 4o
+- Generated with ChatGPT 4o
+- Modified by Gemini CLI, to monorepo
+- Modified by Hand.

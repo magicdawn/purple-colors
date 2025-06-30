@@ -1,0 +1,45 @@
+{
+  "name": "purple-colors",
+  "version": "0.0.1",
+  "description": "purple colors for your web app",
+  "type": "module",
+  "keywords": [
+    "purple",
+    "purple-colors"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/magicdawn/purple-colors",
+  "bugs": {
+    "url": "https://github.com/magicdawn/purple-colors/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magicdawn/purple-colors.git"
+  },
+  "author": "magicdawn",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "dev": "tsdown -w",
+    "build": "tsdown",
+    "prepublishOnly": "pnpm typecheck && pnpm build"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.7",
+    "tsdown": "^0.12.9",
+    "typescript": "^5.8.3"
+  }
+}

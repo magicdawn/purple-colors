@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh">
+
+<head>
+	<meta charset="UTF-8" />
+	<title>妹妹说紫色很有韵味</title>
+	<style>
+		body {
+			font-family: sans-serif;
+			background: #f9f9f9;
+			padding: 2em;
+			color: #333;
+		}
+
+		h1,
+		h3 {
+			text-align: center;
+		}
+
+		.container {
+			max-width: 960px;
+			margin: 0 auto;
+		}
+
+		.color-grid {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 1.2em;
+			margin-top: 2em;
+		}
+
+		@media (max-width: 768px) {
+			.color-grid {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+		@media (max-width: 480px) {
+			.color-grid {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		.color-box {
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+			transition: transform 0.2s;
+		}
+
+		.color-box:hover {
+			transform: translateY(-2px);
+		}
+
+		.swatch {
+			height: 100px;
+			width: 100%;
+		}
+
+		.info {
+			padding: 0.6em;
+			background: white;
+			font-size: 0.85em;
+			text-align: center;
+		}
+
+		.name {
+			font-weight: bold;
+		}
+
+		.hex {
+			color: #666;
+			font-family: monospace;
+		}
+
+		.desc {
+			font-size: 0.8em;
+			color: #888;
+			margin-top: 0.3em;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<h1>「妹妹说紫色很有韵味」</h1>
+		<h3>紫色系颜色展示（从浅到深）</h3>
+		<div class="color-grid">
+			@each(c in PURPLE_COLORS)
+			<div class="color-box">
+				<div class="swatch" style="background: {{c.hex}}"></div>
+				<div class="info">
+					<div class="name">{{c.name}}</div>
+					<div class="hex">{{ c.hex }}</div>
+					<div class="desc">{{ c.nameZh}}, {{ c.desc }}</div>
+				</div>
+			</div>
+			@end
+		</div>
+	</div>
+</body>
+
+</html>
